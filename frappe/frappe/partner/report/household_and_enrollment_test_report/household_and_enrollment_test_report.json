@@ -1,0 +1,73 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-09-26 10:43:02.879926",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SHISHU GHAR",
+ "letterhead": null,
+ "modified": "2025-09-26 10:44:23.858786",
+ "modified_by": "Administrator",
+ "module": "Partner",
+ "name": "household and enrollment test report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    -- hf.name, hf.landmark, hf.date_of_visit, hf.hamlet, hf.respondent_name, \r\n    -- hf.hosuehold_head_name, hf.respondent_age, hf.is_the_family_a_pvtg, \r\n    -- hf.primary_occupation, hf.pvtg_name, hf.primary_occupation_other, \r\n    -- hf.number_of_family_members, hf.children_6_to_18_years, hf.adults_above_18_years, \r\n    -- hf.is_anyone_of_your_family_a_migrant_worker, hf.family_members_enganged_as_migrant_workers, \r\n    -- hf.no_of_months_the_migrants_were_away_last_year, hf.does_anyone_from_your_family_migrate_every_year, \r\n    -- hf.do_you_take_your_children_along_with_you, hf.who_looks_after_them_at_home, hf.remarks, \r\n    -- hf.parent, hf.parenttype, hf.parentfield, hf.social_category_id, hf.hhguid, \r\n    -- hf.verfication_status, hf.primary_occupation_id, hf.partner_id, hf.state_id, \r\n    -- hf.district_id, hf.block_id, hf.gp_id, hf.village_id, hf.respondent_gender_id, \r\n    -- hf.app_created_by, hf.children__3_years, hf.children_3_to_6_years, hf.verification_status, \r\n    -- hf.workflow_state, hf.hhid, hf.religion, hf.any_other_religion, hf.creche_id, \r\n    -- hf.any_other_gender, hf.no_of_pregnant_women, hf.whether_the_household_migrated_from_settlementvillage, \r\n    -- hf.phone_no, hf.hh_id_janadhikara, hf.which_is_your_native_state, hf.which_is_your_native_district,\r\n    -- -- Child form fields\r\n    -- hcf.name AS child_form_name, hcf.parent AS child_parent, hcf.child_name, hcf.child_age, \r\n    -- hcf.is_dob_available, hcf.child_dob, hcf.relationship_with_child, hcf.hhguid AS child_hhguid, \r\n    -- hcf.hhcguid, hcf.gender_id AS child_gender_id, hcf.relation_with_child_other, \r\n    -- hcf.any_other_gender AS child_any_other_gender, hcf.mother_tongue,\r\n    \r\n    -- rg.gender AS respondent_gender,\r\n    -- r.religion AS religion_name,\r\n    -- sc.social_category_name,\r\n    -- po.primary_occupation AS primary_occupation_name,\r\n    -- nm.no_of_months,\r\n    -- yn.option_name AS migration_status,\r\n    -- cg.gender AS child_gender,\r\n    -- cr.creche_name AS \"Creche\",\r\n    -- g.gp_name AS \"GP\",\r\n    -- b.block_name AS \"Block\",\r\n    -- d.district_name AS \"District\",\r\n    -- s.state_name AS \"State\",\r\n    -- p.partner_name AS \"Partner\"\r\n\r\n    cee.*\r\n    \r\nFROM `tabHousehold Form` AS hf\r\nLEFT JOIN `tabHousehold Child Form` AS hcf ON hf.name = hcf.parent\r\nLEFT JOIN `tabCreche` AS cr ON cr.name = hf.creche_id\r\nLEFT JOIN `tabGender` AS rg ON rg.name = hf.respondent_gender_id\r\nLEFT JOIN `tabReligion` AS r ON r.name = hf.religion\r\nLEFT JOIN `tabSocial Category` AS sc ON sc.name = hf.social_category_id\r\nLEFT JOIN `tabPrimary Occupation` AS po ON po.name = hf.primary_occupation_id\r\nLEFT JOIN `tabNo of Months` AS nm ON nm.name = hf.no_of_months_the_migrants_were_away_last_year\r\nLEFT JOIN `tabYesNo` AS yn ON yn.name = hf.whether_the_household_migrated_from_settlementvillage\r\nLEFT JOIN `tabGender` AS cg ON cg.name = hcf.gender_id\r\nLEFT JOIN `tabChild Enrollment and Exit` AS cee ON cee.childenrollguid = hcf.hhcguid\r\nINNER JOIN `tabPartner` p ON p.name = cr.partner_id\r\nINNER JOIN `tabState` s ON s.name = cr.state_id\r\nINNER JOIN `tabDistrict` d ON d.name = cr.district_id\r\nINNER JOIN `tabBlock` b ON b.name = cr.block_id\r\nINNER JOIN `tabGram Panchayat` g ON g.name = cr.gp_id\r\nLIMIT 500\r\n;\r\n",
+ "ref_doctype": "Household Form",
+ "report_name": "household and enrollment test report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "APPI Administrator"
+  },
+  {
+   "role": "Partner Administrator"
+  },
+  {
+   "role": "Creche Supervisor"
+  },
+  {
+   "role": "Cluster Coordinator"
+  },
+  {
+   "role": "CRP"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "Program Manager"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "Accounts and Logistics Manager"
+  },
+  {
+   "role": "Full Admin"
+  },
+  {
+   "role": "M&E Manager"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-06-08 15:39:50.844245",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partner_id",
+  "state_id",
+  "district_id",
+  "block_id",
+  "gp_id",
+  "village_id",
+  "creche_id",
+  "column_break_mumk",
+  "supplied_fuel_source",
+  "if_lpg_what_type",
+  "current_source_of_fuel",
+  "other",
+  "date_of_supply"
+ ],
+ "fields": [
+  {
+   "fieldname": "partner_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Partner",
+   "options": "Partner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Block",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gp_id",
+   "fieldtype": "Link",
+   "label": "Gram Panchayat",
+   "options": "Gram Panchayat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "label": "Village",
+   "options": "Village",
+   "reqd": 1
+  },
+  {
+   "fieldname": "creche_id",
+   "fieldtype": "Link",
+   "label": "Creche",
+   "options": "Creche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mumk",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "supplied_fuel_source",
+   "fieldtype": "Select",
+   "label": "Supplied Fuel Source",
+   "options": "\nWood\nLPG\nInduction"
+  },
+  {
+   "fieldname": "if_lpg_what_type",
+   "fieldtype": "Select",
+   "label": "If LPG, What Type?",
+   "options": "\nCommercial\nDomestic"
+  },
+  {
+   "fieldname": "current_source_of_fuel",
+   "fieldtype": "Select",
+   "label": "Current Source of Fuel",
+   "options": "\nWood\nLPG\nInduction\nSmokeless Chulha\nOther"
+  },
+  {
+   "fieldname": "other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "date_of_supply",
+   "fieldtype": "Date",
+   "label": "Date of Supply",
+   "reqd": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-06-09 12:19:23.670756",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "LPG",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

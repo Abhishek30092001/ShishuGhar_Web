@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-07-14 23:27:59.082225",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "action_taken",
+  "action_taken_tn",
+  "is_active",
+  "seq_id",
+  "red_flag_child_action_taken_kn"
+ ],
+ "fields": [
+  {
+   "fieldname": "action_taken",
+   "fieldtype": "Data",
+   "label": "Action taken"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq.ID"
+  },
+  {
+   "fieldname": "red_flag_child_action_taken_kn",
+   "fieldtype": "Data",
+   "label": "red_flag_child_action_taken_kn"
+  },
+  {
+   "fieldname": "action_taken_tn",
+   "fieldtype": "Data",
+   "label": "Red Flag Child Action taken TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:21.090463",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Red Flag Child Action taken",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "action_taken"
+}

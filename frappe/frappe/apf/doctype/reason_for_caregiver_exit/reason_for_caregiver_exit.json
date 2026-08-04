@@ -1,0 +1,70 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-07-20 16:49:02.050391",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "caregiver_exit",
+  "caregiver_exit_tn",
+  "is_active",
+  "seq_id",
+  "reason_for_caregiver_exit_kn"
+ ],
+ "fields": [
+  {
+   "fieldname": "caregiver_exit",
+   "fieldtype": "Data",
+   "label": "Caregiver exit"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq.ID"
+  },
+  {
+   "fieldname": "reason_for_caregiver_exit_kn",
+   "fieldtype": "Data",
+   "label": "Reason for caregiver exit KN"
+  },
+  {
+   "fieldname": "caregiver_exit_tn",
+   "fieldtype": "Data",
+   "label": "Reason for caregiver exit TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:21.482450",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Reason for caregiver exit",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "caregiver_exit"
+}

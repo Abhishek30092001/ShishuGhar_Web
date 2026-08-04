@@ -1,0 +1,85 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-02-21 14:52:03.191870",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "creche_status",
+  "creche_status_hi",
+  "creche_status_od",
+  "creche_status_kn",
+  "creche_status_tn",
+  "seq_id",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "creche_status",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Creche Status"
+  },
+  {
+   "fieldname": "creche_status_hi",
+   "fieldtype": "Data",
+   "label": "Creche Status HI"
+  },
+  {
+   "fieldname": "creche_status_od",
+   "fieldtype": "Data",
+   "label": "Creche Status OD"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "creche_status_kn",
+   "fieldtype": "Data",
+   "label": "Creche Status KN"
+  },
+  {
+   "fieldname": "creche_status_tn",
+   "fieldtype": "Data",
+   "label": "Creche Status TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_appi": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:22.081402",
+ "modified_by": "Administrator",
+ "module": "Creche Module",
+ "name": "Creche Status",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "creche_status"
+}

@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-07-07 09:20:14.584773",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "roof_type_data",
+  "seq_id",
+  "roof_type_data_hi",
+  "roof_type_data_od",
+  "roof_type_data_kn",
+  "roof_type_data_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "roof_type_data",
+   "fieldtype": "Data",
+   "label": "Roof Type Data"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq ID"
+  },
+  {
+   "fieldname": "roof_type_data_hi",
+   "fieldtype": "Data",
+   "label": "roof_type_data_hi"
+  },
+  {
+   "fieldname": "roof_type_data_od",
+   "fieldtype": "Data",
+   "label": "roof_type_data_od"
+  },
+  {
+   "fieldname": "roof_type_data_kn",
+   "fieldtype": "Data",
+   "label": "roof_type_data_kn"
+  },
+  {
+   "fieldname": "roof_type_data_tn",
+   "fieldtype": "Data",
+   "label": "roof_type_data_tn"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-07 09:22:52.588486",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Roof Type",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "roof_type_data"
+}

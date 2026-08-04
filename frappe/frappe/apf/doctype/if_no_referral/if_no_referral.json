@@ -1,0 +1,74 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-07-15 15:14:09.568185",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "no_referral_data",
+  "seq_id",
+  "no_referral_data_hi",
+  "no_referral_data_od",
+  "no_referral_data_kn",
+  "no_referral_data_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "no_referral_data",
+   "fieldtype": "Data",
+   "label": "No Referral Data"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq ID"
+  },
+  {
+   "fieldname": "no_referral_data_hi",
+   "fieldtype": "Data",
+   "label": "No Referral Data HI"
+  },
+  {
+   "fieldname": "no_referral_data_od",
+   "fieldtype": "Data",
+   "label": "No Referral Data OD"
+  },
+  {
+   "fieldname": "no_referral_data_kn",
+   "fieldtype": "Data",
+   "label": "No Referral Data KN"
+  },
+  {
+   "fieldname": "no_referral_data_tn",
+   "fieldtype": "Data",
+   "label": "No Referral Data TN"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-15 15:15:46.059999",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "If no referral",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "no_referral_data"
+}

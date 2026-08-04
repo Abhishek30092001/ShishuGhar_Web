@@ -1,0 +1,58 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-02-28 13:05:42.354396",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "option",
+  "option_tn",
+  "option_kn"
+ ],
+ "fields": [
+  {
+   "fieldname": "option",
+   "fieldtype": "Data",
+   "label": "Option"
+  },
+  {
+   "fieldname": "option_kn",
+   "fieldtype": "Data",
+   "label": "Option KN"
+  },
+  {
+   "fieldname": "option_tn",
+   "fieldtype": "Data",
+   "label": "Option TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:16.549047",
+ "modified_by": "Administrator",
+ "module": "Creche Module",
+ "name": "Option",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "option",
+ "translated_doctype": 1
+}

@@ -1,0 +1,38 @@
+{
+ "content": null,
+ "creation": "2026-05-04 00:58:31.121381",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-06-02 11:55:16.463506",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "review-report-card",
+ "owner": "Administrator",
+ "page_name": "review-report-card",
+ "roles": [
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "Full Admin"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "Review Report Card"
+}

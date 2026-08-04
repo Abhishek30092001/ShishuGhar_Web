@@ -1,0 +1,96 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-06-18 10:08:00.534113",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "caregiver_code",
+  "caregiver_name",
+  "mobile_no",
+  "is_active",
+  "date_of_joinning",
+  "date_of_leaving",
+  "reason_for_caregiver_exit",
+  "creche_id",
+  "cgguid"
+ ],
+ "fields": [
+  {
+   "fieldname": "caregiver_code",
+   "fieldtype": "Data",
+   "label": "Caregiver Code"
+  },
+  {
+   "fieldname": "caregiver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Caregiver Name"
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "date_of_joinning",
+   "fieldtype": "Date",
+   "label": "Date of joining"
+  },
+  {
+   "fieldname": "date_of_leaving",
+   "fieldtype": "Date",
+   "label": "Date of leaving"
+  },
+  {
+   "fieldname": "reason_for_caregiver_exit",
+   "fieldtype": "Link",
+   "label": "Reasons for caregiver leave/exit",
+   "options": "Reason for caregiver exit"
+  },
+  {
+   "fieldname": "creche_id",
+   "fieldtype": "Link",
+   "label": "Creche",
+   "options": "Creche"
+  },
+  {
+   "fieldname": "cgguid",
+   "fieldtype": "Data",
+   "label": "Caregiver GUID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-18 11:33:48.834059",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Caregiver Data",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "caregiver_name"
+}

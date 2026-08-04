@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-09-22 15:18:29.807798",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hh_child_status",
+  "seq_no",
+  "hh_child_status_hi",
+  "hh_child_status_od",
+  "hh_child_status_kn",
+  "hh_child_status_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "hh_child_status",
+   "fieldtype": "Data",
+   "label": "HH Child Status"
+  },
+  {
+   "fieldname": "seq_no",
+   "fieldtype": "Int",
+   "label": "Seq.no"
+  },
+  {
+   "fieldname": "hh_child_status_hi",
+   "fieldtype": "Data",
+   "label": "HH child status HI"
+  },
+  {
+   "fieldname": "hh_child_status_od",
+   "fieldtype": "Data",
+   "label": "HH child status od"
+  },
+  {
+   "fieldname": "hh_child_status_kn",
+   "fieldtype": "Data",
+   "label": "HH child status KN"
+  },
+  {
+   "fieldname": "hh_child_status_tn",
+   "fieldtype": "Data",
+   "label": "HH Child Status TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:22.478990",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "HH Child Status",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "hh_child_status"
+}

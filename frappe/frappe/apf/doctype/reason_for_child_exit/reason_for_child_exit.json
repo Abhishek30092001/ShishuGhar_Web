@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-05-13 12:57:37.384306",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "add_reasons",
+  "is_active",
+  "seq_id",
+  "reason_for_child_exit_hi",
+  "reason_for_child_exit_od",
+  "reason_for_child_exit_kn",
+  "reason_for_child_exit_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "add_reasons",
+   "fieldtype": "Data",
+   "label": "Add Reasons"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq.ID"
+  },
+  {
+   "fieldname": "reason_for_child_exit_hi",
+   "fieldtype": "Data",
+   "label": "Reason for child exit HI"
+  },
+  {
+   "fieldname": "reason_for_child_exit_od",
+   "fieldtype": "Data",
+   "label": "Reason for child exit OD"
+  },
+  {
+   "fieldname": "reason_for_child_exit_kn",
+   "fieldtype": "Data",
+   "label": "Reason for child exit KN"
+  },
+  {
+   "fieldname": "reason_for_child_exit_tn",
+   "fieldtype": "Data",
+   "label": "Reason for child exit TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:17.317494",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Reason for child exit",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "add_reasons"
+}

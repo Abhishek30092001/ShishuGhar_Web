@@ -1,0 +1,72 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-03-16 20:11:28.399262",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SHISHU GHAR",
+ "letterhead": null,
+ "modified": "2026-03-16 20:11:28.399262",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "CMC Meeting",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Creche Committee Meeting",
+ "report_name": "CMC Meeting",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "Program Manager"
+  },
+  {
+   "role": "Cluster Coordinator"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "MIS Manager"
+  },
+  {
+   "role": "Accounts and Logistics Manager"
+  },
+  {
+   "role": "Capacity and Building Manager"
+  },
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "APPI Administrator"
+  },
+  {
+   "role": "Partner Administrator"
+  },
+  {
+   "role": "Creche Supervisor"
+  },
+  {
+   "role": "Safety Coordinator"
+  }
+ ]
+}

@@ -1,0 +1,75 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2026-02-16 17:55:08.228959",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SHISHU GHAR",
+ "letterhead": null,
+ "modified": "2026-02-16 17:55:08.228959",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Check-in Report (Cadrewise)",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "ref_doctype": "Creche Check In",
+ "report_name": "Check-in Report (Cadrewise)",
+ "report_type": "Script Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "APPI Administrator"
+  },
+  {
+   "role": "Creche Supervisor"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "Program Manager"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "MIS Manager"
+  },
+  {
+   "role": "Accounts and Logistics Manager"
+  },
+  {
+   "role": "Capacity and Building Manager"
+  },
+  {
+   "role": "Cluster Coordinator"
+  },
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "Partner Administrator"
+  },
+  {
+   "role": "M&E Manager"
+  },
+  {
+   "role": "Safety Coordinator"
+  },
+  {
+   "role": "All"
+  }
+ ]
+}

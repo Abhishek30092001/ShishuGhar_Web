@@ -1,0 +1,174 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-06-18 09:50:12.111843",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "training_tab",
+  "batch_no",
+  "training_of",
+  "partner_id",
+  "creche_id",
+  "batch_start_date",
+  "batch_end_date",
+  "training_type",
+  "topic_covered",
+  "organisations_giving_training",
+  "training_participants",
+  "creche_caregivers",
+  "other_participants_tab",
+  "other_participants",
+  "history_tab",
+  "created_by",
+  "created_at",
+  "updated_at",
+  "updated_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "batch_no",
+   "fieldtype": "Data",
+   "label": "Batch Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "training_of",
+   "fieldtype": "Select",
+   "label": "Training of",
+   "options": "All\nCreche Caregiver"
+  },
+  {
+   "fieldname": "partner_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Partner",
+   "options": "Partner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "creche_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Creche",
+   "options": "Creche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_start_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Batch Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "batch_end_date",
+   "fieldtype": "Date",
+   "label": "Batch End Date"
+  },
+  {
+   "fieldname": "training_type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nInitial\nRefesher"
+  },
+  {
+   "fieldname": "topic_covered",
+   "fieldtype": "Table MultiSelect",
+   "ismultiselect": 1,
+   "label": "Topics Covered",
+   "multiselectlink": "Topic multiselect",
+   "options": "Topic multiselect"
+  },
+  {
+   "fieldname": "organisations_giving_training",
+   "fieldtype": "Table MultiSelect",
+   "ignore_user_permissions": 1,
+   "ismultiselect": 1,
+   "label": "Organisations Giving Training",
+   "multiselectlink": "Organisations training",
+   "options": "Organisations training"
+  },
+  {
+   "fieldname": "training_tab",
+   "fieldtype": "Tab Break",
+   "label": "Training"
+  },
+  {
+   "fieldname": "training_participants",
+   "fieldtype": "Tab Break",
+   "label": "Training Participants"
+  },
+  {
+   "fieldname": "creche_caregivers",
+   "fieldtype": "Table",
+   "label": "Creche Caregiver",
+   "options": "Caregiver Training"
+  },
+  {
+   "fieldname": "other_participants_tab",
+   "fieldtype": "Tab Break",
+   "label": "Other Participants"
+  },
+  {
+   "fieldname": "other_participants",
+   "fieldtype": "Table",
+   "label": "Other Participants",
+   "options": "Training Participants Others"
+  },
+  {
+   "fieldname": "history_tab",
+   "fieldtype": "Tab Break",
+   "label": "History"
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Data",
+   "label": "Created By",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_at",
+   "fieldtype": "Data",
+   "label": "Created At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "updated_at",
+   "fieldtype": "Data",
+   "label": "Updated At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "updated_by",
+   "fieldtype": "Data",
+   "label": "Updated by",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-18 11:38:55.490256",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Training",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

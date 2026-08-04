@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-02-02 12:32:14.816025",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "yes_no_note_observed",
+  "yes_no_note_observed_hi",
+  "yes_no_note_observed_od",
+  "yes_no_note_observed_kn",
+  "yes_no_note_observed_tn",
+  "seq_id"
+ ],
+ "fields": [
+  {
+   "fieldname": "yes_no_note_observed",
+   "fieldtype": "Data",
+   "label": "Yes No Note Observed"
+  },
+  {
+   "fieldname": "yes_no_note_observed_hi",
+   "fieldtype": "Data",
+   "label": "Hindi"
+  },
+  {
+   "fieldname": "yes_no_note_observed_od",
+   "fieldtype": "Data",
+   "label": "Odiya"
+  },
+  {
+   "fieldname": "yes_no_note_observed_kn",
+   "fieldtype": "Data",
+   "label": "Kannada"
+  },
+  {
+   "fieldname": "yes_no_note_observed_tn",
+   "fieldtype": "Data",
+   "label": "Yes No Observed TN",
+   "translatable": 1
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq ID"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-21 11:16:46.379798",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Yes No observed",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "yes_no_note_observed"
+}

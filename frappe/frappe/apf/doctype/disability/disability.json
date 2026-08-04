@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-12-06 11:52:43.040654",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "disability",
+  "is_active",
+  "seq_id",
+  "disability_hi",
+  "disability_od",
+  "disability_kn",
+  "disability_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "disability",
+   "fieldtype": "Data",
+   "label": "Disability"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq.ID"
+  },
+  {
+   "fieldname": "disability_hi",
+   "fieldtype": "Data",
+   "label": "Disability HI"
+  },
+  {
+   "fieldname": "disability_od",
+   "fieldtype": "Data",
+   "label": "Disability OD"
+  },
+  {
+   "fieldname": "disability_kn",
+   "fieldtype": "Data",
+   "label": "Disability_KN"
+  },
+  {
+   "fieldname": "disability_tn",
+   "fieldtype": "Data",
+   "label": "Disability TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:20.986606",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Disability",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "disability"
+}

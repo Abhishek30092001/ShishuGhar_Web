@@ -1,0 +1,38 @@
+{
+ "content": null,
+ "creation": "2026-03-08 18:03:26.908316",
+ "docstatus": 0,
+ "doctype": "Page",
+ "idx": 0,
+ "modified": "2026-06-02 11:56:37.702353",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "hr-dashboard",
+ "owner": "Administrator",
+ "page_name": "hr-dashboard",
+ "roles": [
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "Full Admin"
+  },
+  {
+   "role": "Foundation Central Team"
+  }
+ ],
+ "script": null,
+ "standard": "Yes",
+ "style": null,
+ "system_page": 0,
+ "title": "HR Dashboard"
+}

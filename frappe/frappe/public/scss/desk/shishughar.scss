@@ -1,0 +1,493 @@
+// Shishughar Theme — header + workspace sidebar redesign
+// Loaded last from desk/index.scss so it overrides default desk styles.
+
+:root,
+[data-theme="light"] {
+	--sg-primary: #5c6b9c;
+	--sg-primary-dark: #4d5b88;
+	--sg-primary-light: #eef1f9;
+	--sg-header-text: #ffffff;
+	--sg-sidebar-text: #2d3748;
+	--sg-card-bg: #f4f6fa;
+	--navbar-bg: var(--sg-primary);
+	--navbar-height: 56px;
+	--page-head-height: 50px;
+	--sidebar-select-color: var(--sg-primary-light);
+}
+
+[data-theme="dark"] {
+	--sg-primary: #4d5b88;
+	--sg-primary-dark: #3f4c75;
+	--sg-primary-light: #2b3245;
+	--sg-header-text: #ffffff;
+	--sg-sidebar-text: var(--gray-200);
+	--sg-card-bg: var(--gray-800);
+	--navbar-bg: var(--sg-primary-dark);
+}
+
+[data-theme="light"] body {
+	background-color: #f6f7fb;
+}
+
+// ---------------------------------------------------------------------------
+// Full-width layout — remove bootstrap container max-widths on desk
+// ---------------------------------------------------------------------------
+header.navbar .container,
+.page-head .container,
+.container.page-body {
+	max-width: 100% !important;
+	width: 100%;
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+// ---------------------------------------------------------------------------
+// Header
+// ---------------------------------------------------------------------------
+header.navbar {
+	// Frappe hardcodes height to $navbar-height (48px) at compile time,
+	// but sticky offsets use var(--navbar-height) — keep them in sync.
+	height: var(--navbar-height);
+	background: var(--navbar-bg);
+	border-bottom: none;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+
+	.container {
+		height: 100%;
+		align-items: center;
+	}
+
+	// White rounded logo tile
+	.navbar-brand.navbar-home {
+		background: #ffffff;
+		border-radius: 10px;
+		padding: 4px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+		img.app-logo {
+			// Navbar Settings injects an inline width — override it so the
+			// logo scales by height and keeps its aspect ratio.
+			width: auto !important;
+			height: 34px;
+			max-height: 34px;
+			border-radius: 6px;
+		}
+	}
+
+	// App title injected by shishughar_theme.js
+	.sg-app-title {
+		color: var(--sg-header-text);
+		font-size: 1.2rem;
+		font-weight: 700;
+		letter-spacing: 0.2px;
+		margin-left: 12px;
+		margin-right: auto;
+		white-space: nowrap;
+
+		@media (max-width: 767px) {
+			display: none;
+		}
+	}
+
+	#navbar-breadcrumbs {
+		margin-left: 16px;
+
+		.breadcrumb-item a,
+		a {
+			color: rgba(255, 255, 255, 0.85);
+
+			&:hover {
+				color: #ffffff;
+			}
+		}
+	}
+
+	// Rounded white search pill
+	.search-bar {
+		max-width: 440px;
+
+		.search-icon svg {
+			stroke: var(--gray-500);
+		}
+
+		.awesomplete input {
+			height: 42px;
+			border-radius: 999px;
+			background: #ffffff;
+			color: var(--gray-800);
+			border: none;
+			padding-left: 40px;
+			box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+
+			&::placeholder {
+				color: var(--gray-500);
+			}
+
+			&:focus {
+				border-radius: 21px 21px 0 0;
+				background: #ffffff;
+			}
+		}
+	}
+
+	// Icons (bell, chat, help) in white
+	.navbar-nav {
+		align-items: center;
+
+		.nav-link,
+		.nav-link.text-muted,
+		.notifications-icon {
+			color: var(--sg-header-text) !important;
+
+			svg.es-icon,
+			svg.icon {
+				--icon-stroke: var(--sg-header-text);
+				filter: brightness(0) invert(1);
+			}
+		}
+	}
+
+	.vertical-bar {
+		border-right-color: rgb(255, 255, 255);
+	}
+
+	// Avatar — clean circle with white ring, no overlap
+	.dropdown-navbar-user {
+		display: flex;
+		align-items: center;
+		margin-left: 18px !important;
+		margin-right: 4px;
+
+		.nav-link {
+			display: flex;
+			align-items: center;
+		}
+
+		.avatar {
+			width: 38px;
+			height: 38px;
+			border-radius: 50%;
+			box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+
+			.avatar-frame,
+			.standard-image {
+				width: 100%;
+				height: 100%;
+				border-radius: 50% !important;
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Page head (title row) — compact, solid bg, clearly visible action buttons
+// ---------------------------------------------------------------------------
+.page-head {
+	background: #ffffff;
+	border-bottom: 1px solid var(--border-color);
+	height: var(--page-head-height);
+
+	.page-head-content {
+		height: var(--page-head-height);
+	}
+
+	.title-text {
+		font-size: 1.15rem;
+		font-weight: 600;
+	}
+
+	.page-actions {
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		gap: 8px;
+
+		.btn-primary {
+			background: var(--btn-primary);
+			border-color: transparent;
+			color: #ffffff;
+
+			&:hover {
+				background: var(--gray-800);
+			}
+		}
+	}
+}
+
+[data-theme="dark"] .page-head {
+	background: var(--bg-color);
+}
+
+// Tighten the gap between header and body
+.layout-main-section-wrapper {
+	margin-top: 0;
+	padding-top: 0;
+}
+
+// ---------------------------------------------------------------------------
+// Workspace (Desk) Sidebar
+// ---------------------------------------------------------------------------
+
+// Sidebar panel background — white instead of the grey page body
+.layout-side-section {
+	background-color: #ffffff;
+}
+
+// Single scrollbar: parent section stops scrolling, .desk-sidebar scrolls
+[data-page-route="Workspaces"] .layout-main .layout-side-section {
+	overflow: hidden !important;
+}
+
+.layout-side-section .list-sidebar.overlay-sidebar {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-right: 4px;
+}
+
+.desk-sidebar {
+	flex: 1;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-top: 8px;
+	scrollbar-width: thin;
+	scrollbar-color: transparent transparent;
+
+	&:hover {
+		scrollbar-color: var(--gray-300) transparent;
+	}
+
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: transparent;
+		border-radius: 99px;
+	}
+
+	&:hover::-webkit-scrollbar-thumb {
+		background: var(--gray-300);
+	}
+
+	// Hide "MY WORKSPACES" / "PUBLIC" section labels for a cleaner menu
+	.standard-sidebar-label {
+		display: none !important;
+	}
+
+	.standard-sidebar-section {
+		margin-bottom: 0;
+	}
+
+	.desk-sidebar-item.standard-sidebar-item {
+		// Keep padding on the anchor (the clickable area), not the container,
+		// so a single click anywhere on the row navigates.
+		padding: 0;
+		margin-bottom: 8px;
+		border-radius: 14px;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--sg-sidebar-text);
+		transition: background-color 0.15s ease, color 0.15s ease;
+
+		.item-anchor {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			padding: 12px 14px;
+			overflow: hidden;
+			color: inherit;
+		}
+
+		> a {
+			color: inherit;
+		}
+
+		.sidebar-item-icon {
+			display: flex;
+			align-items: center;
+			margin-right: 10px;
+
+			svg {
+				width: 20px;
+				height: 20px;
+				--icon-stroke: currentColor;
+			}
+
+			.sg-emoji {
+				font-size: 20px;
+				line-height: 1;
+			}
+		}
+
+		.sidebar-item-label {
+			color: inherit;
+			// global.scss truncates labels with nowrap + ellipsis;
+			// let long workspace names wrap to a second line instead.
+			white-space: normal;
+			overflow: visible;
+			text-overflow: clip;
+			line-height: 1.3;
+			overflow-wrap: break-word;
+		}
+
+		.sidebar-item-control {
+			padding-right: 8px;
+		}
+
+		&:hover,
+		&:focus-within {
+			background-color: var(--sidebar-select-color);
+		}
+
+		// Active item — solid slate-blue pill with white text
+		&.selected {
+			background-color: var(--sg-primary);
+			color: #ffffff;
+			box-shadow: 0 4px 10px rgba(92, 107, 156, 0.35);
+
+			.sidebar-item-label,
+			.item-anchor,
+			> a {
+				color: #ffffff;
+			}
+
+			.sidebar-item-icon svg {
+				--icon-stroke: #ffffff;
+				filter: brightness(0) invert(1);
+			}
+
+			// Emojis stay colorful on the blue pill
+			.sidebar-item-icon .sg-emoji {
+				filter: none;
+			}
+
+			.sidebar-item-control .icon-btn,
+			.sidebar-item-control .drag-handle {
+				--icon-stroke: #ffffff;
+			}
+		}
+	}
+
+	// Nested child items
+	.sidebar-child-item .desk-sidebar-item.standard-sidebar-item {
+		font-size: var(--text-base);
+		font-weight: 500;
+		margin-bottom: 4px;
+
+		.item-anchor {
+			padding: 9px 14px;
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Sidebar footer (user card) — injected by shishughar_theme.js
+// ---------------------------------------------------------------------------
+.sg-sidebar-footer {
+	flex-shrink: 0;
+	padding: 8px 4px 16px;
+
+	.sg-divider {
+		height: 1px;
+		background: var(--border-color);
+		margin: 8px 6px 14px;
+	}
+
+	// User card — clickable, opens the user's profile
+	.sg-user-card {
+		display: flex;
+		align-items: center;
+		gap: 12px;
+		background: var(--sg-card-bg);
+		border-radius: 14px;
+		padding: 12px 14px;
+		cursor: pointer;
+		transition: background-color 0.15s ease, box-shadow 0.15s ease;
+
+		&:hover {
+			background-color: var(--sidebar-select-color);
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+		}
+
+		.sg-user-avatar {
+			.avatar,
+			.avatar-frame,
+			.standard-image {
+				width: 40px;
+				height: 40px;
+				border-radius: 50% !important;
+			}
+
+			.standard-image {
+				background-color: var(--sg-primary);
+				color: #ffffff;
+				font-weight: 700;
+			}
+		}
+
+		.sg-user-info {
+			min-width: 0;
+
+			.sg-user-name {
+				font-size: var(--text-md);
+				font-weight: 700;
+				color: var(--sg-sidebar-text);
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+
+			.sg-user-role {
+				font-size: var(--text-sm);
+				color: var(--text-muted);
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}
+
+// ---------------------------------------------------------------------------
+// Workspace content — card-style widgets
+// ---------------------------------------------------------------------------
+.layout-main-section {
+	.widget {
+		background: var(--fg-color);
+		border: 1px solid var(--border-color);
+		border-radius: 14px;
+		padding: 16px;
+		transition: box-shadow 0.15s ease;
+
+		&:hover {
+			box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+		}
+
+		.widget-head .widget-title {
+			font-weight: 700;
+			font-size: 17px;
+		}
+
+		.link-item,
+		.widget-body a,
+		.widget-body .link-content {
+			font-size: 15px;
+		}
+	}
+}
+
+// Wider sidebar on large screens
+@media (min-width: 992px) {
+	.page-body .layout-side-section {
+		flex: 0 0 290px;
+		max-width: 290px;
+	}
+}

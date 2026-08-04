@@ -1,0 +1,73 @@
+{
+ "add_total_row": 1,
+ "columns": [],
+ "creation": "2025-09-25 15:27:17.074902",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SHISHU GHAR",
+ "letterhead": null,
+ "modified": "2026-06-27 12:39:21.949285",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "new test report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT name,childenrollguid\r\nFROM `tabChild Enrollment and Exit` AS cee\r\nWHERE cee.child_id IN (\r\n    'CG19111581132',\r\n    'CG19111571124',\r\n    'CG19111401134',\r\n    'CG19111361206',\r\n    'CG19111251053',\r\n    'CG19111501303',\r\n    'CG19111461272',\r\n    'CG19111461254',\r\n    'CG19111461613',\r\n    'CG19111461542',\r\n    'CG19111461614',\r\n    'CG19111431302',\r\n    'CG19111381262',\r\n    'CG19111381272',\r\n    'CG19111561062',\r\n    'CG19111561052',\r\n    'CG19111561042',\r\n    'CG19111561012',\r\n    'CG19111471193',\r\n    'CG19111451034',\r\n    'CG19111451044',\r\n    'CG19111421062',\r\n    'CG19111411164',\r\n    'CG19111411613',\r\n    'CG19111411154',\r\n    'CG19111411254',\r\n    'CG19111561032',\r\n    'CG19111561022',\r\n    'CG19111481253',\r\n    'CG19111481254',\r\n    'CG19111481072',\r\n    'CG191112816601',\r\n    'CG19111391282',\r\n    'CG19111531432',\r\n    'CG19111521262',\r\n    'CG19111231023',\r\n    'CG19111411072',\r\n    'CG19111411473'\r\n);\r\n\r\n\r\n-- SELECT name,child_name,child_id, COUNT(*) as cnt\r\n-- FROM `tabChild Enrollment and Exit`\r\n-- GROUP BY child_id\r\n-- HAVING COUNT(*) > 1;\r\n\r\n",
+ "ref_doctype": "Child Growth Monitoring",
+ "report_name": "new test report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "APPI Administrator"
+  },
+  {
+   "role": "Partner Administrator"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "Program Manager"
+  },
+  {
+   "role": "Cluster Coordinator"
+  },
+  {
+   "role": "Creche Supervisor"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "MIS Manager"
+  },
+  {
+   "role": "Accounts and Logistics Manager"
+  },
+  {
+   "role": "Capacity and Building Manager"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "M&E Manager"
+  }
+ ]
+}

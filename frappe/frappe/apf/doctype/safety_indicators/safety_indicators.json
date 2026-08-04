@@ -1,0 +1,572 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-02-02 12:03:39.170105",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "creche_info_tab",
+  "partner_id",
+  "state_id",
+  "district_id",
+  "block_id",
+  "gp_id",
+  "village_id",
+  "creche_id",
+  "date_of_visit",
+  "entry_time",
+  "exit_time",
+  "environmental_safety",
+  "is_the_structural_safety_of_the_creches_roof_and_walls_ensured",
+  "structural_safety_of_the_creches_roof_and_walls_ensured_other",
+  "is_the_creche_protected_from_rainwater_leakage",
+  "is_the_creche_protected_from_rainwater_leakage_other",
+  "is_any_welltube_well_within_20_m_radius_of_the_creche",
+  "is_any_welltube_well_within_20_m_radius_of_the_creche_other",
+  "column_break_gedv",
+  "properly_covered_with_iron_net_inside_out_side",
+  "properly_covered_with_iron_net_inside_out_side_other",
+  "are_sharp_edge_cutters_or_machinery_kept_away_from_the_creche",
+  "edge_cutters_or_machinery_kept_away_from_the_creche_other",
+  "physical_safety_security",
+  "external_fencing_around",
+  "external_fencing_around_other",
+  "safety_the_main_entrance",
+  "safety_the_main_entrance_other",
+  "safety_gate_kitchen_entrance",
+  "safety_gate_kitchen_entrance_other",
+  "column_break_wwxl",
+  "creche_secured_against_animals",
+  "creche_secured_against_animals_other",
+  "parents_recorded_visitor_register",
+  "parents_recorded_visitor_register_other",
+  "fire_safety_tab",
+  "positioned_above_cylinder_height",
+  "positioned_above_cylinder_height_other",
+  "fire_extinguisher_available_working_condition",
+  "fire_extinguisher_available_working_condition_other",
+  "column_break_mkvg",
+  "kitchen_fire_related_emergencies",
+  "kitchen_fire_related_emergencies_other",
+  "confident_handling_pressure_cooker",
+  "confident_handling_pressure_cooker_other",
+  "electrical_safety_tab",
+  "electrical_connections_positioned_out_children_reach",
+  "electrical_connections_positioned_out_children_reach_other",
+  "fans_and_lights_installed_safe_location_height",
+  "fans_and_lights_installed_safe_location_height_other",
+  "column_break_znmz",
+  "solar_batteries_kept_out_children_reach",
+  "solar_batteries_kept_out_children_reach_other",
+  "lightening_installed_creche",
+  "lightening_installed_creche_other",
+  "food_safety_tab",
+  "food_utilized_first_out_manner",
+  "food_utilized_first_out_manner_other",
+  "egg_floating_tests_doneperiodically_check_quality_eggs",
+  "egg_floating_tests_doneperiodically_check_quality_eggs_other",
+  "column_break_xymu",
+  "is_leftover_food_disposed_of_properly_every_day",
+  "is_leftover_food_disposed_of_properly_every_day_other",
+  "water_filter_being_safe_drinking_water",
+  "water_filter_being_safe_drinking_water_other",
+  "others_tab",
+  "creche_running_two_caregivers",
+  "creche_running_two_caregivers_other",
+  "first_aid_available_creche",
+  "first_aid_available_creche_other",
+  "column_break_wfap",
+  "emergency_contact_numbers_clearly_displayed",
+  "emergency_contact_numbers_clearly_displayed_other",
+  "hidden_tab",
+  "smguid",
+  "appcreated_by",
+  "appupdated_by"
+ ],
+ "fields": [
+  {
+   "fieldname": "creche_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Creche Info"
+  },
+  {
+   "fieldname": "partner_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Partner",
+   "options": "Partner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Block/Zone",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gp_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Gram Panchayat/Municipal Corporation",
+   "options": "Gram Panchayat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "label": "Village/Settlement",
+   "options": "Village",
+   "reqd": 1
+  },
+  {
+   "fieldname": "creche_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Creche",
+   "options": "Creche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "environmental_safety",
+   "fieldtype": "Tab Break",
+   "label": "Infrastructural & Environmental Safety"
+  },
+  {
+   "fieldname": "is_the_structural_safety_of_the_creches_roof_and_walls_ensured",
+   "fieldtype": "Link",
+   "label": "Is the structural safety of the creche's roof and walls ensured?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "date_of_visit",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Date of Visit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "entry_time",
+   "fieldtype": "Time",
+   "label": "Entry Time"
+  },
+  {
+   "fieldname": "exit_time",
+   "fieldtype": "Time",
+   "label": "Exit Time"
+  },
+  {
+   "fieldname": "is_the_creche_protected_from_rainwater_leakage",
+   "fieldtype": "Link",
+   "label": "Is the creche protected from rainwater leakage?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_any_welltube_well_within_20_m_radius_of_the_creche",
+   "fieldtype": "Link",
+   "label": "Is any well/tube well within 20 m radius of the creche?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_gedv",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "properly_covered_with_iron_net_inside_out_side",
+   "fieldtype": "Link",
+   "label": "If yes is it properly covered with an iron net (inside & outside)?",
+   "options": "Yes No observed"
+  },
+  {
+   "fieldname": "are_sharp_edge_cutters_or_machinery_kept_away_from_the_creche",
+   "fieldtype": "Link",
+   "label": "Are sharp edge cutters or machinery kept away from the creche?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "physical_safety_security",
+   "fieldtype": "Tab Break",
+   "label": "Physical Safety & Security"
+  },
+  {
+   "fieldname": "external_fencing_around",
+   "fieldtype": "Link",
+   "label": "Is there external fencing around the creche?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "safety_the_main_entrance",
+   "fieldtype": "Link",
+   "label": "Is there a safety gate at the main entrance?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "safety_gate_kitchen_entrance",
+   "fieldtype": "Link",
+   "label": "Is there a safety gate at the kitchen entrance?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wwxl",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "creche_secured_against_animals",
+   "fieldtype": "Link",
+   "label": "Is the creche secured against the entry of poisonous animals (snakes, scorpions) as well as domestic animals (dogs, cats, cows, hens)?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "parents_recorded_visitor_register",
+   "fieldtype": "Link",
+   "label": "Is the entry of any person other than parents in the creche recorded in the visitor\u2019s register?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fire_safety_tab",
+   "fieldtype": "Tab Break",
+   "label": "Fire Safety"
+  },
+  {
+   "fieldname": "positioned_above_cylinder_height",
+   "fieldtype": "Link",
+   "label": " Is there a separate slab or table for the gas stove positioned above  cylinder height?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fire_extinguisher_available_working_condition",
+   "fieldtype": "Link",
+   "label": "Is a fire extinguisher available and in working condition?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_mkvg",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "kitchen_fire_related_emergencies",
+   "fieldtype": "Link",
+   "label": "Are fire blankets and fire buckets available in the kitchen for fire related emergencies?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "confident_handling_pressure_cooker",
+   "fieldtype": "Link",
+   "label": "Is the caregiver confident in handling a pressure cooker?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "electrical_safety_tab",
+   "fieldtype": "Tab Break",
+   "label": "Electrical Safety"
+  },
+  {
+   "fieldname": "electrical_connections_positioned_out_children_reach",
+   "fieldtype": "Link",
+   "label": "Are all electrical connections positioned out of children's reach?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fans_and_lights_installed_safe_location_height",
+   "fieldtype": "Link",
+   "label": "Are fans and lights installed at a safe location and height?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_znmz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "solar_batteries_kept_out_children_reach",
+   "fieldtype": "Link",
+   "label": "Are solar panels or batteries kept out of children\u2019s reach?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "lightening_installed_creche",
+   "fieldtype": "Link",
+   "label": "Is lightening arrestors installed in the creche building",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "food_safety_tab",
+   "fieldtype": "Tab Break",
+   "label": "Food Safety"
+  },
+  {
+   "fieldname": "food_utilized_first_out_manner",
+   "fieldtype": "Link",
+   "label": "Are food grains and rice utilized in first come first out manner?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "egg_floating_tests_doneperiodically_check_quality_eggs",
+   "fieldtype": "Link",
+   "label": "Are egg floating tests done periodically to check the quality of eggs?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_xymu",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "water_filter_being_safe_drinking_water",
+   "fieldtype": "Link",
+   "label": "Is water filter being used for safe drinking water?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "others_tab",
+   "fieldtype": "Tab Break",
+   "label": "Others"
+  },
+  {
+   "fieldname": "creche_running_two_caregivers",
+   "fieldtype": "Link",
+   "label": "During your visit, is the creche running with two caregivers?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "first_aid_available_creche",
+   "fieldtype": "Link",
+   "label": "Is a fully equipped first-aid box available in the creche?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_wfap",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "emergency_contact_numbers_clearly_displayed",
+   "fieldtype": "Link",
+   "label": "Are emergency contact numbers clearly displayed?",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hidden_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "Hidden"
+  },
+  {
+   "fieldname": "smguid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "SI_GUID"
+  },
+  {
+   "fieldname": "appcreated_by",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App Created By"
+  },
+  {
+   "fieldname": "appupdated_by",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App updated by"
+  },
+  {
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "is_leftover_food_disposed_of_properly_every_day",
+   "fieldtype": "Link",
+   "label": "Is leftover food disposed of properly every day? ",
+   "options": "Yes No observed",
+   "reqd": 1
+  },
+  {
+   "fieldname": "structural_safety_of_the_creches_roof_and_walls_ensured_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "is_the_creche_protected_from_rainwater_leakage_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "is_any_welltube_well_within_20_m_radius_of_the_creche_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "properly_covered_with_iron_net_inside_out_side_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "edge_cutters_or_machinery_kept_away_from_the_creche_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "external_fencing_around_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "safety_the_main_entrance_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "safety_gate_kitchen_entrance_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "creche_secured_against_animals_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "parents_recorded_visitor_register_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "positioned_above_cylinder_height_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "fire_extinguisher_available_working_condition_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "kitchen_fire_related_emergencies_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "confident_handling_pressure_cooker_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "electrical_connections_positioned_out_children_reach_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "fans_and_lights_installed_safe_location_height_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "solar_batteries_kept_out_children_reach_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "lightening_installed_creche_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "food_utilized_first_out_manner_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "egg_floating_tests_doneperiodically_check_quality_eggs_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "is_leftover_food_disposed_of_properly_every_day_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "water_filter_being_safe_drinking_water_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "creche_running_two_caregivers_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "first_aid_available_creche_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "emergency_contact_numbers_clearly_displayed_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-03-30 19:04:09.368950",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Safety Indicators",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

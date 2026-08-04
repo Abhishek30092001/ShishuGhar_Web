@@ -1,0 +1,59 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:partner_name",
+ "creation": "2025-06-18 10:16:43.308906",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partner_code",
+  "partner_name",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "partner_code",
+   "fieldtype": "Data",
+   "label": "Partner Code"
+  },
+  {
+   "fieldname": "partner_name",
+   "fieldtype": "Data",
+   "label": "Partner Name",
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-06-18 10:19:23.694066",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Training Partner",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "partner_name"
+}

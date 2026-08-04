@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2025-08-29 11:45:43.880861",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "language_name",
+  "language_name_tn",
+  "seq_id",
+  "is_active",
+  "english_label",
+  "language_name_hi",
+  "language_name_od",
+  "language_name_kn"
+ ],
+ "fields": [
+  {
+   "fieldname": "language_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "language "
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "Seq.ID"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Is Active"
+  },
+  {
+   "fieldname": "english_label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "English Label"
+  },
+  {
+   "fieldname": "language_name_hi",
+   "fieldtype": "Data",
+   "label": "Hindi"
+  },
+  {
+   "fieldname": "language_name_od",
+   "fieldtype": "Data",
+   "label": "OD"
+  },
+  {
+   "fieldname": "language_name_kn",
+   "fieldtype": "Data",
+   "label": "kannada"
+  },
+  {
+   "fieldname": "language_name_tn",
+   "fieldtype": "Data",
+   "label": "Language Master TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:22.288648",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Language Master",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "language_name"
+}

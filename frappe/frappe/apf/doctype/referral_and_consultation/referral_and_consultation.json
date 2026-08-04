@@ -1,0 +1,330 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-07-15 12:09:38.168031",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "partner_id",
+  "state_id",
+  "district_id",
+  "block_id",
+  "gp_id",
+  "village_id",
+  "creche_id",
+  "child_details_tab",
+  "child_id",
+  "child_name",
+  "gender_id",
+  "date_of_identification",
+  "heightlength_at_growth_monitoring_cm",
+  "weight_at_growth_monitoring_kg",
+  "whz_at_identification_cat",
+  "waz_at_identification_cat",
+  "haz_at_identification_cat",
+  "whz_at_identification",
+  "waz_at_identification",
+  "haz_at_identification",
+  "pre_referral_brief_and_parents_consent_tab",
+  "sick_condition_present",
+  "name_of_the_condition",
+  "parent_counseling_done_before_referral",
+  "parents_consented_to_visit_a_doctor",
+  "if_noreason",
+  "if_noother",
+  "referral_tab",
+  "date_of_referral",
+  "referral_to",
+  "if_other",
+  "hidden_tab",
+  "childenrollguid",
+  "r_c_guid",
+  "cgmguid",
+  "appcreated_on",
+  "appcreated_by",
+  "app_updated_by",
+  "app_updated_on",
+  "visit_count",
+  "schedule_date",
+  "child_status"
+ ],
+ "fields": [
+  {
+   "fieldname": "partner_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Partner",
+   "options": "Partner",
+   "reqd": 1
+  },
+  {
+   "fieldname": "state_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "State",
+   "options": "State",
+   "reqd": 1
+  },
+  {
+   "fieldname": "district_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "District",
+   "options": "District",
+   "reqd": 1
+  },
+  {
+   "fieldname": "block_id",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Block/Zone",
+   "options": "Block",
+   "reqd": 1
+  },
+  {
+   "fieldname": "gp_id",
+   "fieldtype": "Link",
+   "label": "Gram Panchayat/Municipal Corporation",
+   "options": "Gram Panchayat",
+   "reqd": 1
+  },
+  {
+   "fieldname": "village_id",
+   "fieldtype": "Link",
+   "label": "Village/Settlement",
+   "options": "Village",
+   "reqd": 1
+  },
+  {
+   "fieldname": "creche_id",
+   "fieldtype": "Link",
+   "label": "Creche",
+   "options": "Creche",
+   "reqd": 1
+  },
+  {
+   "fieldname": "child_details_tab",
+   "fieldtype": "Tab Break",
+   "label": "Child Details"
+  },
+  {
+   "fieldname": "child_id",
+   "fieldtype": "Data",
+   "label": "Child ID"
+  },
+  {
+   "fieldname": "child_name",
+   "fieldtype": "Data",
+   "label": "Child Name"
+  },
+  {
+   "fieldname": "gender_id",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "date_of_identification",
+   "fieldtype": "Date",
+   "label": "Date of Identification"
+  },
+  {
+   "fieldname": "heightlength_at_growth_monitoring_cm",
+   "fieldtype": "Float",
+   "label": "Height/Length at Growth Monitoring (cm)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "weight_at_growth_monitoring_kg",
+   "fieldtype": "Float",
+   "label": "Weight at Growth Monitoring (kg)",
+   "precision": "2"
+  },
+  {
+   "fieldname": "whz_at_identification_cat",
+   "fieldtype": "Float",
+   "label": "WHZ Category",
+   "precision": "2"
+  },
+  {
+   "fieldname": "waz_at_identification_cat",
+   "fieldtype": "Float",
+   "label": "WAZ Category",
+   "precision": "2"
+  },
+  {
+   "fieldname": "haz_at_identification_cat",
+   "fieldtype": "Float",
+   "label": "HAZ Category",
+   "precision": "2"
+  },
+  {
+   "fieldname": "whz_at_identification",
+   "fieldtype": "Data",
+   "label": "WHZ at Identification"
+  },
+  {
+   "fieldname": "waz_at_identification",
+   "fieldtype": "Data",
+   "label": "WAZ at Identification"
+  },
+  {
+   "fieldname": "haz_at_identification",
+   "fieldtype": "Data",
+   "label": "HAZ at Identification"
+  },
+  {
+   "fieldname": "pre_referral_brief_and_parents_consent_tab",
+   "fieldtype": "Tab Break",
+   "label": "Pre Referral brief and Parents consent "
+  },
+  {
+   "default": "0",
+   "fieldname": "sick_condition_present",
+   "fieldtype": "Check",
+   "label": "Sick Condition Present"
+  },
+  {
+   "fieldname": "name_of_the_condition",
+   "fieldtype": "Data",
+   "label": "Name of the condition"
+  },
+  {
+   "default": "0",
+   "fieldname": "parent_counseling_done_before_referral",
+   "fieldtype": "Check",
+   "label": "Parent Counseling Done Before Referral"
+  },
+  {
+   "default": "0",
+   "fieldname": "parents_consented_to_visit_a_doctor",
+   "fieldtype": "Check",
+   "label": "Parents consented to visit a doctor"
+  },
+  {
+   "fieldname": "if_noreason",
+   "fieldtype": "Table MultiSelect",
+   "ismultiselect": 1,
+   "label": "Reason",
+   "multiselectlink": "If no referral",
+   "options": "Referral Reason child table"
+  },
+  {
+   "fieldname": "if_noother",
+   "fieldtype": "Data",
+   "label": "Reason Other"
+  },
+  {
+   "fieldname": "referral_tab",
+   "fieldtype": "Tab Break",
+   "label": "Referral"
+  },
+  {
+   "fieldname": "date_of_referral",
+   "fieldtype": "Date",
+   "label": "Date of Referral"
+  },
+  {
+   "fieldname": "referral_to",
+   "fieldtype": "Link",
+   "label": "Referral to",
+   "options": "Referral to"
+  },
+  {
+   "fieldname": "if_other",
+   "fieldtype": "Data",
+   "label": "Other"
+  },
+  {
+   "fieldname": "hidden_tab",
+   "fieldtype": "Tab Break",
+   "hidden": 1,
+   "label": "Hidden"
+  },
+  {
+   "fieldname": "childenrollguid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Children GUID"
+  },
+  {
+   "fieldname": "r_c_guid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "R C GUID"
+  },
+  {
+   "fieldname": "cgmguid",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "CGM GUID"
+  },
+  {
+   "fieldname": "appcreated_on",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App created on"
+  },
+  {
+   "fieldname": "appcreated_by",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App created by"
+  },
+  {
+   "fieldname": "app_updated_by",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App updated by"
+  },
+  {
+   "fieldname": "app_updated_on",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "App updated on"
+  },
+  {
+   "fieldname": "visit_count",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Visit Count"
+  },
+  {
+   "fieldname": "schedule_date",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Schedule Date"
+  },
+  {
+   "fieldname": "child_status",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Child Status"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-07-15 15:32:56.203563",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Referral and Consultation",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

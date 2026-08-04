@@ -1,0 +1,52 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-06-25 17:55:55.572006",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "year",
+  "year_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "year",
+   "fieldtype": "Int",
+   "label": "Year",
+   "length": 6
+  },
+  {
+   "fieldname": "year_tn",
+   "fieldtype": "Data",
+   "label": "Year TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:20.604648",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Year",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "year"
+}

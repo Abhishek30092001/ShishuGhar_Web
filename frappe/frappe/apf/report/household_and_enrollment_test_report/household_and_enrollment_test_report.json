@@ -1,0 +1,73 @@
+{
+ "add_total_row": 0,
+ "columns": [],
+ "creation": "2025-09-26 10:43:02.879926",
+ "disabled": 0,
+ "docstatus": 0,
+ "doctype": "Report",
+ "filters": [],
+ "idx": 0,
+ "is_standard": "Yes",
+ "letter_head": "SHISHU GHAR",
+ "letterhead": null,
+ "modified": "2025-09-26 14:38:35.629077",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "household and enrollment test report",
+ "owner": "Administrator",
+ "prepared_report": 0,
+ "query": "SELECT \r\n    hf.name, hf.landmark, hf.date_of_visit, hf.hamlet, hf.respondent_name, \r\n    hf.hosuehold_head_name, hf.respondent_age, hf.is_the_family_a_pvtg, \r\n    hf.primary_occupation, hf.pvtg_name, hf.primary_occupation_other, \r\n    hf.number_of_family_members, hf.children_6_to_18_years, hf.adults_above_18_years, \r\n    hf.is_anyone_of_your_family_a_migrant_worker, hf.family_members_enganged_as_migrant_workers, \r\n    hf.no_of_months_the_migrants_were_away_last_year, hf.does_anyone_from_your_family_migrate_every_year, \r\n    hf.do_you_take_your_children_along_with_you, hf.who_looks_after_them_at_home, hf.remarks, \r\n    hf.social_category_id, hf.verfication_status, hf.primary_occupation_id, \r\n    hf.app_created_by, hf.children__3_years, hf.children_3_to_6_years, hf.verification_status, \r\n    hf.workflow_state, hf.hhid, hf.religion, hf.any_other_religion, hf.creche_id, hf.no_of_pregnant_women, \r\n    hf.whether_the_household_migrated_from_settlementvillage, \r\n    hf.phone_no, hf.hh_id_janadhikara, hf.which_is_your_native_state, hf.which_is_your_native_district,\r\n    -- Child form fields\r\n    hcf.name AS child_form_name, hcf.parent AS child_parent, hcf.child_name, hcf.child_age, \r\n    hcf.is_dob_available, hcf.child_dob, hcf.relationship_with_child, hcf.hhguid AS child_hhguid, \r\n    hcf.hhcguid, hcf.relation_with_child_other, \r\n    hcf.any_other_gender AS child_any_other_gender, hcf.mother_tongue,\r\n    CASE \r\n        WHEN hf.respondent_gender_id = 1 THEN 'Male'\r\n        WHEN hf.respondent_gender_id = 2 THEN 'Female'\r\n        WHEN hf.respondent_gender_id = 3 THEN 'Other'\r\n        ELSE 'Unknown'\r\n    END AS respondent_gender,\r\n\r\n    \r\n    CASE \r\n        WHEN hcf.gender_id = 1 THEN 'Male'\r\n        WHEN hcf.gender_id = 2 THEN 'Female'\r\n        WHEN hcf.gender_id = 3 THEN 'Other'\r\n        ELSE 'Unknown'\r\n    END AS child_gender,\r\n        \r\n        \r\n\r\n    r.religion AS religion_name,\r\n    sc.social_category_name,\r\n    po.primary_occupation AS primary_occupation_name,\r\n    nm.no_of_months,\r\n    yn.option_name AS migration_status,\r\n    cg.gender AS child_gender,\r\n    cr.creche_name AS \"Creche\",\r\n    g.gp_name AS \"GP\",\r\n    b.block_name AS \"Block\",\r\n    d.district_name AS \"District\",\r\n    s.state_name AS \"State\",\r\n    p.partner_name AS \"Partner\",\r\n\r\n    cee.creche_id,\r\n    cee.child_id,\r\n    cee.child_name,\r\n    cee.date_of_enrollment,\r\n    cee.child_dob,\r\n    cee.age_at_enrollment_in_months,\r\n    cee.height,\r\n    cee.weight,\r\n    cee.date_of_exit,\r\n    cee.age_of_exit,\r\n    cee.other_reason,\r\n    cee.is_child_enrolled_awc,\r\n    cee.date_of_enrollment_awc,\r\n    cee.is_active,\r\n    cee.is_exited,\r\n    cee.measurement_taken,\r\n    CASE \r\n        WHEN cee.measurement_equipment = 1 THEN 'Stadiometer'\r\n        ELSE 'Infantometer'\r\n    END AS measurement_equipment,\r\n    \r\n    CASE \r\n        WHEN cee.measurement_equipment_exit = 1 THEN 'Stadiometer'\r\n        ELSE 'Infantometer'\r\n    END AS measurement_equipment_exit,\r\n    cee.weight_for_age,\r\n    cee.weight_for_height,\r\n    cee.height_for_age,\r\n    cee.measurement_date,\r\n    cee.weight_for_age_zscore,\r\n    cee.weight_for_height_zscore,\r\n    cee.height_for_age_zscore,\r\n    cee.height_exit,\r\n    cee.weight_exit,\r\n    cee.measurement_equipment_exit,\r\n    cee.weight_for_age_zscore_exit,\r\n    cee.weight_for_height_zscore_exit,\r\n    cee.height_for_age_zscore_exit,\r\n    cee.weight_for_age_exit,\r\n    cee.weight_for_height_exit,\r\n    cee.height_for_age_exit,\r\n    rfe.add_reasons as 'reason for exit',\r\n    \r\n    \r\n    cp.currently_brestfeeding,\r\n    cp.does_child_have_any_disability,\r\n    cp.does_child_have_any_longterm_illness_more_than_6_months,\r\n    cp.how_many_siblings_does_the_child_have,\r\n    cp.name_of_primary_caregiver,\r\n    cp.birth_order_of_the_child,\r\n    cp.family_lives_in,\r\n    ht.house_type,\r\n    sw.source as 'source of water',\r\n    cp.do_they_migrate_for_work,\r\n    cp.land_available_for_cultivation,\r\n    el.level as \"education level of parentscaregiver\",\r\n    cp.entitlement_received_by_the_family_at_present,\r\n    cp.is_the_child_enrolled_for_take_home_ration,\r\n    cp.entitlement_any_other,\r\n    cp.any_other_specify_illness,\r\n    cp.is_active,\r\n    rl.relation_name as 'relation with child',\r\n    cp.father_name,\r\n    cp.mother_name,\r\n    cp.child_specially_abled,\r\n    cp.entitlement_received_id,\r\n    cp.status,\r\n    cp.remarks,\r\n    cp.verification_date\r\n\r\n    \r\nFROM `tabHousehold Form` AS hf\r\ninner JOIN `tabHousehold Child Form` AS hcf ON hf.name = hcf.parent\r\nLEFT JOIN `tabCreche` AS cr ON cr.name = hf.creche_id\r\nLEFT JOIN `tabReligion` AS r ON r.name = hf.religion\r\nLEFT JOIN `tabSocial Category` AS sc ON sc.name = hf.social_category_id\r\nLEFT JOIN `tabPrimary Occupation` AS po ON po.name = hf.primary_occupation_id\r\nLEFT JOIN `tabNo of Months` AS nm ON nm.name = hf.no_of_months_the_migrants_were_away_last_year\r\nLEFT JOIN `tabYesNo` AS yn ON yn.name = hf.whether_the_household_migrated_from_settlementvillage\r\nLEFT JOIN `tabGender` AS cg ON cg.name = hcf.gender_id\r\nLEFT JOIN `tabChild Enrollment and Exit` AS cee ON cee.hhcguid = hcf.hhcguid\r\nLEFT JOIN `tabReason for child exit` AS rfe ON cee.reason_for_exit = rfe.seq_id\r\nLEFT JOIN `tabChild Profile` AS cp ON hcf.hhcguid = cp.chhguid\r\nLEFT JOIN `tabLanguage Master` AS lm ON hcf.mother_tongue = lm.seq_id\r\nLEFT JOIN `tabHouse Type` AS ht ON cp.type_of_house = ht.seq_id\r\nLEFT JOIN `tabSource of Water` AS sw ON cp.source_of_drinking_water_in_the_household = sw.seq_id\r\nLEFT JOIN `tabEducation Level` AS el ON cp.education_level_of_parentscaregiver = el.seq_id\r\nLEFT JOIN `tabRelation` AS rl ON cp.relationship_with_child = rl.seq_id\r\n\r\nINNER JOIN `tabPartner` p ON p.name = cr.partner_id\r\nINNER JOIN `tabState` s ON s.name = cr.state_id\r\nINNER JOIN `tabDistrict` d ON d.name = cr.district_id\r\nINNER JOIN `tabBlock` b ON b.name = cr.block_id\r\nINNER JOIN `tabGram Panchayat` g ON g.name = cr.gp_id\r\n\r\n;\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n-- SELECT \r\n--     hf.name, hf.landmark, hf.date_of_visit, hf.hamlet, hf.respondent_name, \r\n--     hf.hosuehold_head_name, hf.respondent_age, hf.is_the_family_a_pvtg, \r\n--     hf.primary_occupation, hf.pvtg_name, hf.primary_occupation_other, \r\n--     hf.number_of_family_members, hf.children_6_to_18_years, hf.adults_above_18_years, \r\n--     hf.is_anyone_of_your_family_a_migrant_worker, hf.family_members_enganged_as_migrant_workers, \r\n--     hf.no_of_months_the_migrants_were_away_last_year, hf.does_anyone_from_your_family_migrate_every_year, \r\n--     hf.do_you_take_your_children_along_with_you, hf.who_looks_after_them_at_home, hf.remarks, \r\n--     hf.parent, hf.parenttype, hf.parentfield, hf.social_category_id, hf.hhguid, \r\n--     hf.verfication_status, hf.primary_occupation_id, hf.respondent_gender_id, \r\n--     hf.app_created_by, hf.children__3_years, hf.children_3_to_6_years, hf.verification_status, \r\n--     hf.workflow_state, hf.hhid, hf.religion, hf.any_other_religion, hf.creche_id, \r\n--     hf.any_other_gender, hf.no_of_pregnant_women, hf.whether_the_household_migrated_from_settlementvillage, \r\n--     hf.phone_no, hf.hh_id_janadhikara, hf.which_is_your_native_state, hf.which_is_your_native_district,\r\n--     -- Child form fields\r\n--     hcf.name AS child_form_name, hcf.parent AS child_parent, hcf.child_name, hcf.child_age, \r\n--     hcf.is_dob_available, hcf.child_dob, hcf.relationship_with_child, hcf.hhguid AS child_hhguid, \r\n--     hcf.hhcguid, hcf.relation_with_child_other, \r\n--     hcf.any_other_gender AS child_any_other_gender, hcf.mother_tongue,\r\n--     CASE \r\n--         WHEN hf.respondent_gender_id = 1 THEN 'Male'\r\n--         WHEN hf.respondent_gender_id = 2 THEN 'Female'\r\n--         WHEN hf.respondent_gender_id = 3 THEN 'Other'\r\n--         ELSE 'Unknown'\r\n--     END AS respondent_gender,\r\n\r\n    \r\n--     CASE \r\n--         WHEN hcf.gender_id = 1 THEN 'Male'\r\n--         WHEN hcf.gender_id = 2 THEN 'Female'\r\n--         WHEN hcf.gender_id = 3 THEN 'Other'\r\n--         ELSE 'Unknown'\r\n--     END AS child_gender,\r\n        \r\n        \r\n\r\n--     r.religion AS religion_name,\r\n--     sc.social_category_name,\r\n--     po.primary_occupation AS primary_occupation_name,\r\n--     nm.no_of_months,\r\n--     yn.option_name AS migration_status,\r\n--     cg.gender AS child_gender,\r\n--     cr.creche_name AS \"Creche\",\r\n--     g.gp_name AS \"GP\",\r\n--     b.block_name AS \"Block\",\r\n--     d.district_name AS \"District\",\r\n--     s.state_name AS \"State\",\r\n--     p.partner_name AS \"Partner\",\r\n\r\n--     cee.creche_id,\r\n--     cee.child_id,\r\n--     cee.child_name,\r\n--     cee.date_of_enrollment,\r\n--     cee.child_dob,\r\n--     cee.age_at_enrollment_in_months,\r\n--     cee.height,\r\n--     cee.weight,\r\n--     cee.date_of_exit,\r\n--     cee.age_of_exit,\r\n--     cee.other_reason,\r\n--     cee.is_child_enrolled_awc,\r\n--     cee.date_of_enrollment_awc,\r\n--     cee.is_active,\r\n--     cee.is_exited,\r\n--     cee.measurement_taken,\r\n--     CASE \r\n--         WHEN cee.measurement_equipment = 1 THEN 'Stadiometer'\r\n--         ELSE 'Infantometer'\r\n--     END AS measurement_equipment,\r\n    \r\n--     CASE \r\n--         WHEN cee.measurement_equipment_exit = 1 THEN 'Stadiometer'\r\n--         ELSE 'Infantometer'\r\n--     END AS measurement_equipment_exit,\r\n--     cee.weight_for_age,\r\n--     cee.weight_for_height,\r\n--     cee.height_for_age,\r\n--     cee.measurement_date,\r\n--     cee.weight_for_age_zscore,\r\n--     cee.weight_for_height_zscore,\r\n--     cee.height_for_age_zscore,\r\n--     cee.height_exit,\r\n--     cee.weight_exit,\r\n--     cee.measurement_equipment_exit,\r\n--     cee.weight_for_age_zscore_exit,\r\n--     cee.weight_for_height_zscore_exit,\r\n--     cee.height_for_age_zscore_exit,\r\n--     cee.weight_for_age_exit,\r\n--     cee.weight_for_height_exit,\r\n--     cee.height_for_age_exit,\r\n--     rfe.add_reasons as 'reason for exit',\r\n    \r\n    \r\n--     cp.currently_brestfeeding,\r\n--     cp.does_child_have_any_disability,\r\n--     cp.does_child_have_any_longterm_illness_more_than_6_months,\r\n--     cp.how_many_siblings_does_the_child_have,\r\n--     cp.name_of_primary_caregiver,\r\n--     cp.birth_order_of_the_child,\r\n--     cp.family_lives_in,\r\n--     cp.type_of_house,\r\n--     cp.source_of_drinking_water_in_the_household,\r\n--     cp.do_they_migrate_for_work,\r\n--     cp.land_available_for_cultivation,\r\n--     cp.education_level_of_parentscaregiver,\r\n--     cp.entitlement_received_by_the_family_at_present,\r\n--     cp.is_the_child_enrolled_for_take_home_ration,\r\n--     cp.entitlement_any_other,\r\n--     cp.any_other_specify_illness,\r\n--     cp.is_active,\r\n--     cp.relationship_with_child,\r\n--     cp.father_name,\r\n--     cp.mother_name,\r\n--     cp.child_specially_abled,\r\n--     cp.entitlement_received_id,\r\n--     cp.status,\r\n--     cp.remarks,\r\n--     cp.verification_date\r\n\r\n    \r\n-- FROM `tabHousehold Form` AS hf\r\n-- inner JOIN `tabHousehold Child Form` AS hcf ON hf.name = hcf.parent\r\n-- LEFT JOIN `tabCreche` AS cr ON cr.name = hf.creche_id\r\n-- LEFT JOIN `tabReligion` AS r ON r.name = hf.religion\r\n-- LEFT JOIN `tabSocial Category` AS sc ON sc.name = hf.social_category_id\r\n-- LEFT JOIN `tabPrimary Occupation` AS po ON po.name = hf.primary_occupation_id\r\n-- LEFT JOIN `tabNo of Months` AS nm ON nm.name = hf.no_of_months_the_migrants_were_away_last_year\r\n-- LEFT JOIN `tabYesNo` AS yn ON yn.name = hf.whether_the_household_migrated_from_settlementvillage\r\n-- LEFT JOIN `tabGender` AS cg ON cg.name = hcf.gender_id\r\n-- LEFT JOIN `tabChild Enrollment and Exit` AS cee ON cee.hhcguid = hcf.hhcguid\r\n-- LEFT JOIN `tabReason for child exit` AS rfe ON cee.reason_for_exit = rfe.seq_id\r\n-- LEFT JOIN `tabChild Profile` AS cp ON hcf.hhcguid = cp.chhguid\r\n-- LEFT JOIN `tabLanguage Master` AS lm ON hcf.mother_tongue = lm.seq_id\r\n-- INNER JOIN `tabPartner` p ON p.name = cr.partner_id\r\n-- INNER JOIN `tabState` s ON s.name = cr.state_id\r\n-- INNER JOIN `tabDistrict` d ON d.name = cr.district_id\r\n-- INNER JOIN `tabBlock` b ON b.name = cr.block_id\r\n-- INNER JOIN `tabGram Panchayat` g ON g.name = cr.gp_id\r\n-- ;\r\n\r\n\r\n",
+ "ref_doctype": "Household Form",
+ "report_name": "household and enrollment test report",
+ "report_type": "Query Report",
+ "roles": [
+  {
+   "role": "System Manager"
+  },
+  {
+   "role": "APPI Administrator"
+  },
+  {
+   "role": "Partner Administrator"
+  },
+  {
+   "role": "Creche Supervisor"
+  },
+  {
+   "role": "Cluster Coordinator"
+  },
+  {
+   "role": "CRP"
+  },
+  {
+   "role": "APF State"
+  },
+  {
+   "role": "APF District"
+  },
+  {
+   "role": "APF Block"
+  },
+  {
+   "role": "Foundation Central Team"
+  },
+  {
+   "role": "APF State Admin"
+  },
+  {
+   "role": "Program Manager"
+  },
+  {
+   "role": "All"
+  },
+  {
+   "role": "Accounts and Logistics Manager"
+  },
+  {
+   "role": "Full Admin"
+  },
+  {
+   "role": "M&E Manager"
+  }
+ ]
+}

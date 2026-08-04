@@ -1,0 +1,82 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2024-05-27 13:02:43.471501",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "attendees",
+  "is_active",
+  "seq_id",
+  "attendees_hi",
+  "attendees_od",
+  "attendees_kn",
+  "attendees_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "attendees",
+   "fieldtype": "Data",
+   "label": "Attendees"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is active"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Data",
+   "label": "Seq.ID"
+  },
+  {
+   "fieldname": "attendees_hi",
+   "fieldtype": "Data",
+   "label": "Attendees HI"
+  },
+  {
+   "fieldname": "attendees_od",
+   "fieldtype": "Data",
+   "label": "Attendees OD"
+  },
+  {
+   "fieldname": "attendees_kn",
+   "fieldtype": "Data",
+   "label": "Attendees HI"
+  },
+  {
+   "fieldname": "attendees_tn",
+   "fieldtype": "Data",
+   "label": "Attendees TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:19.940985",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Attendees",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "attendees"
+}

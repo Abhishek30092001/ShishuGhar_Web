@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHO transition report · logic summary</title>
+    <style>
+        /* print / PDF friendly style */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #fafafa;
+            line-height: 1.5;
+            color: #1e293b;
+            padding: 2rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+            letter-spacing: -0.01em;
+            color: #0f3b5e;
+            border-left: 6px solid #b91c1c;
+            padding-left: 1rem;
+        }
+        .subhead {
+            font-size: 1rem;
+            color: #475569;
+            margin-bottom: 2rem;
+            margin-top: 0.25rem;
+            font-style: italic;
+        }
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.3rem;
+            color: #1e3a5f;
+        }
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #0b3b4b;
+            display: inline-block;
+            background: #eef2ff;
+            padding: 0.2rem 1rem;
+            border-radius: 30px;
+        }
+        .section-card {
+            background: white;
+            border-radius: 20px;
+            padding: 1.6rem 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .code-block {
+            background: #f1f5f9;
+            border-left: 4px solid #3b82f6;
+            padding: 0.8rem 1.2rem;
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            border-radius: 0 12px 12px 0;
+            margin: 1rem 0;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        .inline-code {
+            background: #e9eef3;
+            font-family: monospace;
+            padding: 0.2rem 0.4rem;
+            border-radius: 6px;
+            font-size: 0.9em;
+            color: #c41e3a;
+        }
+        .metric-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.2rem 0;
+            font-size: 0.95rem;
+        }
+        .metric-table th {
+            background: #e6f0fa;
+            font-weight: 600;
+            padding: 0.5rem 0.8rem;
+            text-align: left;
+            border: 1px solid #b9c9e0;
+        }
+        .metric-table td {
+            padding: 0.5rem 0.8rem;
+            border: 1px solid #cfdeed;
+            background: white;
+        }
+        .badge {
+            display: inline-block;
+            background: #cbd5e1;
+            padding: 0.15rem 0.6rem;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+        .recovery { background: #dcfce7; color: #166534; border-left: 5px solid #22c55e; padding-left: 1rem; margin: 1rem 0; }
+        .deterioration { background: #fee2e2; color: #991b1b; border-left: 5px solid #ef4444; padding-left: 1rem; margin: 1rem 0; }
+        .nochange { background: #f3f4f6; color: #374151; border-left: 5px solid #6b7280; padding-left: 1rem; margin: 1rem 0; }
+        .observation {
+            background: #fff8e7;
+            border-radius: 16px;
+            padding: 1.4rem 2rem;
+            border: 1px solid #fde68a;
+        }
+        hr {
+            border: none;
+            border-top: 2px dotted #b0c4de;
+            margin: 2rem 0;
+        }
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #6c757d;
+            text-align: center;
+        }
+        .formula {
+            background: #ebf5ff;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <h1>📊 WHO transition report · logic reference</h1>
+    <div class="subhead">proper universe filtering + exact field calculations (based on initial/final measurements)</div>
+
+    <!-- CORE CONCEPT -->
+    <div class="section-card">
+        <h2>🔴 1. Core concept – initial vs final</h2>
+        <p><strong>Each child has:</strong></p>
+        <ul style="margin-left: 2rem;">
+            <li><span class="inline-code">ad_initial</span> = first ever measurement</li>
+            <li><span class="inline-code">ad_final</span> = latest measurement</li>
+        </ul>
+        <p>✅ <strong>Universe condition</strong> – only children where:</p>
+        <div class="code-block">ad_initial.measurement_date != ad_final.measurement_date</div>
+        <p>👉 <strong>“Measured at least twice”</strong> – the foundation of every denominator.</p>
+    </div>
+
+    <!-- OPERATIONAL CRECHES / ENROLLMENT -->
+    <h2>🟢 2. Base aggregates (context)</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 1rem 0 2rem 0;">
+        <div style="background: #f9f7f5; flex: 1; min-width: 240px; padding: 1.2rem; border-radius: 16px;">
+            <span class="badge">operational</span>
+            <h3 style="margin: 0.5rem 0 0 0; background: none; padding:0;">🏫 Operational creches</h3>
+            <div class="code-block" style="margin:0.5rem 0;">COUNT(DISTINCT c.name)</div>
+            <p><strong>where:</strong> <span class="inline-code">creche_status_id = 3</span> (operational) + filters.</p>
+        </div>
+        <div style="background: #f0f6fa; flex: 1; min-width: 240px; padding: 1.2rem; border-radius: 16px;">
+            <span class="badge">enrollment</span>
+            <h3 style="margin: 0.5rem 0 0 0; background: none; padding:0;">📋 Cumulative enrolled children</h3>
+            <div class="code-block" style="margin:0.5rem 0;">COUNT(DISTINCT cee.name)</div>
+            <p>all children enrolled <strong>before end_date_last</strong>.</p>
+        </div>
+    </div>
+
+    <!-- UNIVERSE DEFINITIONS (TOTAL / CATEGORY) -->
+    <h2>🟢 3. Universe definitions (strictly 2+ measurements)</h2>
+
+    <div style="background: #e6f7ff; padding: 1.2rem 2rem; border-radius: 28px; margin: 1rem 0 2rem 0;">
+        <h3 style="margin-top: 0;">🌌 Total universe</h3>
+        <div class="code-block">
+COUNT(DISTINCT 
+  CASE 
+    WHEN ad_initial.measurement_date != ad_final.measurement_date 
+    THEN cee.childenrollguid 
+  END
+)
+        </div>
+    </div>
+
+    <h3>⚖️ Universe split by <em>initial</em> category</h3>
+    <p>z‑score categories (WHO):</p>
+    <ul>
+        <li><span class="inline-code">Severe</span>  → z &lt; -3</li>
+        <li><span class="inline-code">Moderate</span> → -3 ≤ z &lt; -2</li>
+        <li><span class="inline-code">Normal</span>   → z ≥ -2   (overweight also goes here – see observation ⚠️)</li>
+    </ul>
+    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin: 1rem 0;">
+        <div><span class="inline-code">normal_first</span> = initial = Normal</div>
+        <div><span class="inline-code">moderate_first</span> = initial = Moderate</div>
+        <div><span class="inline-code">severe_first</span> = initial = Severe</div>
+    </div>
+    <p>✅ <em>only if initial_date != final_date</em> (consistent with universe).</p>
+
+    <!-- RECOVERY / DETERIORATION UNIVERSE -->
+    <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin: 2rem 0;">
+        <div style="background: #e6f7e6; padding: 1rem 2rem; border-radius: 20px; flex: 1;">
+            <span class="badge" style="background:#15803d; color:white;">↗️ recovery</span>
+            <p style="font-size: 1.2rem; font-weight: 500; margin:0.5rem 0;">universe_recovery =</p>
+            <div class="code-block" style="background:#d9f0d9;">moderate_first + severe_first</div>
+            <p>only children who <strong>can improve</strong>.</p>
+        </div>
+        <div style="background: #ffe6e6; padding: 1rem 2rem; border-radius: 20px; flex: 1;">
+            <span class="badge" style="background:#b91c1c; color:white;">↘️ deterioration</span>
+            <p style="font-size: 1.2rem; font-weight: 500; margin:0.5rem 0;">universe_deterioration =</p>
+            <div class="code-block" style="background:#ffd9d9;">normal_first + moderate_first</div>
+            <p>only children who <strong>can worsen</strong>.</p>
+        </div>
+    </div>
+
+    <!-- TRANSITION MATRICES (9 cells) -->
+    <h2>🟢 4. Transition counters – the 9 possible paths</h2>
+
+    <div class="recovery">
+        <h3 style="background: none; padding:0; color: #14532d;">🟩 Recovery (improvement)</h3>
+        <table class="metric-table">
+            <tr><th>transition</th><th>counter</th></tr>
+            <tr><td>Moderate → Normal</td><td><span class="inline-code">md_nr_cnt</span></td></tr>
+            <tr><td>Severe → Moderate</td><td><span class="inline-code">sv_md_cnt</span></td></tr>
+            <tr><td>Severe → Normal</td><td><span class="inline-code">sv_nr_cnt</span></td></tr>
+        </table>
+        <div class="formula"><strong>Total recovery =</strong> md_nr + sv_md + sv_nr</div>
+    </div>
+
+    <div class="deterioration">
+        <h3 style="background: none; padding:0; color: #7f1d1d;">🟥 Deterioration</h3>
+        <table class="metric-table">
+            <tr><th>transition</th><th>counter</th></tr>
+            <tr><td>Normal → Moderate</td><td><span class="inline-code">nr_md_cnt</span></td></tr>
+            <tr><td>Normal → Severe</td><td><span class="inline-code">nr_sv_cnt</span></td></tr>
+            <tr><td>Moderate → Severe</td><td><span class="inline-code">md_sv_cnt</span></td></tr>
+        </table>
+        <div class="formula"><strong>Total deterioration =</strong> nr_md + nr_sv + md_sv</div>
+    </div>
+
+    <div class="nochange">
+        <h3 style="background: none; padding:0; color: #2d3748;">⚪ No change (stable)</h3>
+        <table class="metric-table">
+            <tr><th>transition</th><th>counter</th></tr>
+            <tr><td>Severe → Severe</td><td><span class="inline-code">sv_sv_cnt</span></td></tr>
+            <tr><td>Moderate → Moderate</td><td><span class="inline-code">md_md_cnt</span></td></tr>
+            <tr><td>Normal → Normal</td><td><span class="inline-code">nr_nr_cnt</span></td></tr>
+        </table>
+        <div class="formula"><strong>No change =</strong> sv_sv + md_md + nr_nr</div>
+    </div>
+
+    <!-- FIELD‑WISE FINAL LOGIC (PERCENTAGES) -->
+    <h2>🟢 5. Field‑wise final logic (percentages with correct denominators)</h2>
+    <div style="columns: 2 300px; column-gap: 2.5rem; margin: 1.5rem 0;">
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔹 Moderate → Normal</h4>
+            <div class="code-block">md_nr_cnt / moderate_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔹 Severe → Moderate</h4>
+            <div class="code-block">sv_md_cnt / severe_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔹 Severe → Normal</h4>
+            <div class="code-block">sv_nr_cnt / severe_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔹 Total recovery</h4>
+            <div class="code-block">(md_nr + sv_md + sv_nr) / (moderate_first + severe_first)</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔻 Normal → Moderate</h4>
+            <div class="code-block">nr_md_cnt / normal_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔻 Normal → Severe</h4>
+            <div class="code-block">nr_sv_cnt / normal_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔻 Moderate → Severe</h4>
+            <div class="code-block">md_sv_cnt / moderate_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">🔻 Total deterioration</h4>
+            <div class="code-block">(nr_md + nr_sv + md_sv) / (normal_first + moderate_first)</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">◻️ No change (total)</h4>
+            <div class="code-block">(sv_sv + md_md + nr_nr) / total_universe</div>
+            <p>where <span class="inline-code">total_universe = normal_first + moderate_first + severe_first</span></p>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">◻️ Severe → Severe</h4>
+            <div class="code-block">sv_sv_cnt / severe_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">◻️ Moderate → Moderate</h4>
+            <div class="code-block">md_md_cnt / moderate_first</div>
+        </div>
+        <div style="break-inside: avoid; margin-bottom: 1.5rem;">
+            <h4 style="margin:0 0 0.5rem 0;">◻️ Normal → Normal</h4>
+            <div class="code-block">nr_nr_cnt / normal_first</div>
+        </div>
+    </div>
+
+    <!-- EXPERT OBSERVATIONS -->
+    <h2>🧠 6. Important observations (expert level)</h2>
+    <div class="observation">
+        <ul style="list-style-type: decimal; padding-left: 1.8rem;">
+            <li><strong>✅ Clean universe filtering:</strong> every metric uses <span class="inline-code">initial_date != final_date</span> → avoids single‑measurement bias.</li>
+            <li><strong>⚠️ Overweight ignored:</strong> <span class="inline-code">ELSE 'Normal'</span> → any child with z &gt; 2 is also labelled Normal (WHO wise this is technically incorrect).</li>
+            <li><strong>⚠️ No outlier handling:</strong> the line <span class="inline-code"># outlier_first</span> is currently ignored.</li>
+            <li><strong>✅ Transition coverage complete:</strong> all 9 possible transitions (3 recovery, 3 deterioration, 3 no change) are captured.</li>
+            <li><strong>✅ Perfect denominator design:</strong> each percentage uses its correct base population (e.g. md→nr uses moderate_first). Statistically correct.</li>
+        </ul>
+    </div>
+
+    <!-- SIMPLE FORMULA SUMMARY -->
+    <hr />
+    <div style="background: #dbeafe; border-radius: 30px; padding: 1.8rem 2.2rem;">
+        <h2 style="border-bottom: none; color: #1e3a8a; margin-top: 0;">📌 FINAL SIMPLE FORMULA SUMMARY</h2>
+        <div style="font-size: 1.1rem;">
+            <p>✅ <span class="inline-code">Universe</span> = children with <strong>2+ measurements</strong> (initial_date != final_date).</p>
+            <p>✅ <span class="inline-code">Recovery Universe</span> = Moderate<sub>first</sub> + Severe<sub>first</sub><br>
+            ✅ <span class="inline-code">Deterioration Universe</span> = Normal<sub>first</sub> + Moderate<sub>first</sub></p>
+            <p>✅ <span style="background:#22c55e; color:white; padding:0.2rem 1rem; border-radius:40px;">Recovery</span> = MD→NR + SV→MD + SV→NR<br>
+            ✅ <span style="background:#ef4444; color:white; padding:0.2rem 1rem; border-radius:40px;">Deterioration</span> = NR→MD + NR→SV + MD→SV<br>
+            ✅ <span style="background:#9ca3af; color:white; padding:0.2rem 1rem; border-radius:40px;">No change</span> = SV→SV + MD→MD + NR→NR</p>
+            <p class="formula" style="background:#f1f0ff;">% recovery = (MD→NR + SV→MD + SV→NR) / (moderate_first + severe_first)<br>
+            % deterioration = (NR→MD + NR→SV + MD→SV) / (normal_first + moderate_first)<br>
+            % stable = (SV→SV + MD→MD + NR→NR) / total_universe</p>
+        </div>
+    </div>
+
+    <!-- FOOTER (reminder of proper WHO logic) -->
+    <footer>
+        ⚙️ strict WHO transition logic · use with initial/final measurement dates · version 1.0
+    </footer>
+</body>
+</html>

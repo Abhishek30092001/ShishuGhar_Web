@@ -1,0 +1,75 @@
+{
+ "actions": [],
+ "autoname": "autoincrement",
+ "creation": "2026-03-14 10:08:39.168872",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "measurement_position",
+  "seq_id",
+  "measurement_position_hi",
+  "measurement_position_od",
+  "measurement_position_kn",
+  "measurement_position_tn"
+ ],
+ "fields": [
+  {
+   "fieldname": "measurement_position",
+   "fieldtype": "Data",
+   "label": "Measurement Position"
+  },
+  {
+   "fieldname": "seq_id",
+   "fieldtype": "Int",
+   "label": "SEQ ID"
+  },
+  {
+   "fieldname": "measurement_position_hi",
+   "fieldtype": "Data",
+   "label": "HI"
+  },
+  {
+   "fieldname": "measurement_position_od",
+   "fieldtype": "Data",
+   "label": "OD"
+  },
+  {
+   "fieldname": "measurement_position_kn",
+   "fieldtype": "Data",
+   "label": "KN"
+  },
+  {
+   "fieldname": "measurement_position_tn",
+   "fieldtype": "Data",
+   "label": "Measurement Position TN",
+   "translatable": 1
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2026-05-15 17:44:22.670599",
+ "modified_by": "Administrator",
+ "module": "APF",
+ "name": "Measurement Position",
+ "naming_rule": "Autoincrement",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "measurement_position"
+}
